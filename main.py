@@ -17,7 +17,24 @@ def main():
     print(f"Width : {image.shape[1]} pixels")
     print(f"Channels : {image.shape[2]}")
 
-    cv2.imshow("Original MAze", image)
+    gray = process.convert_to_gray(image)
+
+    print("=" * 50)
+    print("converted to gray")
+    print("=" * 50)
+
+    binary = process.convert_to_binary(gray)
+    print("=" * 50)
+    print("converted to binary")
+    print("=" * 50)
+
+    print(f'Grey Shape : {gray.shape}')
+
+    # cv2.imshow("Original MAze", image)
+
+    # cv2.imshow("Gray Maze", gray)
+
+    cv2.imshow("Binary Maze", binary)
 
     cv2.waitKey(0)
 
